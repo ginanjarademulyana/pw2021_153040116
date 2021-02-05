@@ -13,7 +13,7 @@
 // ternary
 // switch
 
-$x = 30;
+$x = 5;
 if ($x < 20) {
     echo "Benar";
 } elseif ($x == 20) {
