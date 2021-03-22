@@ -24,14 +24,20 @@ $arr1 = [123, "Bulan", false];
 
 // menampilkan array
 // gunakan var_dump() atau print_r()
-var_dump($hari);
-echo "<br>";
-print_r($bulan);
-echo "<br>";
+// var_dump($hari);
+// echo "<br>";
+// print_r($bulan);
+// echo "<br>";
 
 // menampilkan 1 element pada array
-echo $arr1[0];
-echo "<br>";
-echo $bulan[2];
+// echo $arr1[0];
+// echo "<br>";
+// echo $bulan[2];
 
+// menambahkan element baru pada array
+var_dump($hari);
+$hari[] = "Kamis";
+$hari[] = "Jumat";
+echo "<br>";
+var_dump($hari);
 ?>
