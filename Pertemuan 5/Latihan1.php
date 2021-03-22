@@ -27,5 +27,11 @@ $arr1 = [123, "Bulan", false];
 var_dump($hari);
 echo "<br>";
 print_r($bulan);
+echo "<br>";
+
+// menampilkan 1 element pada array
+echo $arr1[0];
+echo "<br>";
+echo $bulan[2];
 
 ?>
