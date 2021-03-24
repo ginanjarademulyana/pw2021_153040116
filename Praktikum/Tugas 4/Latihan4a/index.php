@@ -29,7 +29,7 @@ $db_p = mysqli_query($conn, "SELECT * FROM produk");
         <?php $kat = 1 ?>
         <?php while ($row_k = mysqli_fetch_assoc($db_k)) : ?>
           <div class="col-3">
-            <img src="assets/img/categories/<?= $row_k["gambar"]; ?>">
+            <img src="assets/img/kategori/<?= $row_k["gambar"]; ?>">
           </div>
           <?php $kat++ ?>
         <?php endwhile; ?>
@@ -45,7 +45,7 @@ $db_p = mysqli_query($conn, "SELECT * FROM produk");
       <?php $prod = 1 ?>
       <?php while ($row_p = mysqli_fetch_assoc($db_p)) : ?>
         <div class="col-4">
-          <img src="assets/img/produk/<?= $row_p["gambar_produk"]; ?>">
+          <img src="assets/img/products/<?= $row_p["gambar_produk"]; ?>">
           <h4><?= $row_p["nama_barang"] ?></h4>
           <div class="ratting">
             <i class="fa fa-star"></i>
@@ -54,8 +54,9 @@ $db_p = mysqli_query($conn, "SELECT * FROM produk");
             <i class="fa fa-star"></i>
             <i class="fa fa-star-o"></i>
           </div>
-          <p>Rp.<?= $row_p["harga"] ?></p>
-          <p>Ukuran : <?= $row_p["ukuran"] ?></p>
+          <p>Rp.<?= $row_p["harga"]; ?></p>
+          <p>Ukuran : <?= $row_p["ukuran"]; ?></p>
+          <p>Stok Barang : <?= $row_p["stok_barang"]; ?></p>
         </div>
         <?php $prod++ ?>
       <?php endwhile; ?>
