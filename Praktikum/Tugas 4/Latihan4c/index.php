@@ -16,7 +16,7 @@ $produk = produk("SELECT * FROM produk");
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tugas 4</title>
+  <title> Red Store </title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,7 +32,10 @@ $produk = produk("SELECT * FROM produk");
         <?php $kat = 1 ?>
         <?php foreach ($kategori as $ktg) : ?>
           <div class="col-3">
-            <img src="assets/img/kategori/<?= $ktg["gambar"]; ?>">
+            <a href="">
+              <img src="assets/img/kategori/<?= $ktg["gambar"]; ?>">
+              <h4 style="text-align: center;"><?= $ktg["nama_kategori"]; ?></h4>
+            </a>
           </div>
           <?php $kat++ ?>
         <?php endforeach; ?>
@@ -48,7 +51,9 @@ $produk = produk("SELECT * FROM produk");
       <?php $prod = 1 ?>
       <?php foreach ($produk as $prdk) : ?>
         <div class="col-4">
-          <img src="assets/img/products/<?= $prdk["gambar_produk"]; ?>">
+          <a href="php/detail.php?kode_barang=<?= $prdk["kode_barang"]; ?>">
+            <img src="assets/img/products/<?= $prdk["gambar_produk"]; ?>">
+          </a>
           <h4><?= $prdk["nama_barang"] ?></h4>
           <div class="ratting">
             <i class="fa fa-star"></i>

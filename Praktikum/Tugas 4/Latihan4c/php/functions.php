@@ -29,3 +29,14 @@ function produk($sql_p)
   }
   return $rows_p;
 }
+
+function gallery($sql_g)
+{
+  $conn = koneksi();
+  $db_g = mysqli_query($conn, "$sql_g");
+  $rows_g = [];
+  while ($row_g = mysqli_fetch_assoc($db_g)) {
+    $rows_g[] = $row_g;
+  }
+  return $rows_g;
+}
