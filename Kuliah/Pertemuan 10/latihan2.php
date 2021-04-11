@@ -8,25 +8,8 @@
 // Materi ini mempelajari koneksi database
 //--------------------------------------------------------------------
 
-
-
-
-// koneksi ke db & pilih database
-$conn = mysqli_connect('localhost', 'root', '', 'pw_153040116');
-
-//query isi tabel mahasiswa
-$result = mysqli_query($conn, "SELECT * FROM mahasiswa");
-
-
-//ubah data ke dalam array
-$rows = [];
-while ($row = mysqli_fetch_assoc($result)) {
-  $rows[] = $row;
-}
-
-//tampung ke variabel mahasiswa
-$mahasiswa = $rows;
-
+require 'functions.php';
+$mahasiswa = query("SELECT * FROM mahasiswa");
 ?>
 
 
