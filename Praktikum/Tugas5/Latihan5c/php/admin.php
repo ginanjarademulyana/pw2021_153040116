@@ -52,7 +52,7 @@ $produk = produk("SELECT * FROM produk");
                   <td> <?= $i; ?> </td>
                   <td>
                     <a href=""><button type="submit" name="edit_btn" class="btn btn-success">Ubah</button></a>
-                    <a href=""><button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button></a>
+                    <a href="hapus.php?kode_barang=<?= $prod['kode_barang']; ?>" onclick="return confirm ('Hapus Data Barang ?')"><button type="submit" name="delete_btn" class="btn btn-danger">Hapus</button></a>
                   </td>
                   <td><img src="../assets/img/products/<?= $prod['gambar_produk']; ?>"></td>
                   <td>RDSTR<?= $prod['kode_barang']; ?></td>

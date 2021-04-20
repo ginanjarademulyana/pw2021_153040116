@@ -61,3 +61,10 @@ function tambah($data)
   mysqli_query($conn, $db_p);
   return mysqli_affected_rows($conn);
 }
+
+function hapus($kode_barang)
+{
+  $conn = koneksi();
+  mysqli_query($conn, "DELETE FROM produk WHERE kode_barang = $kode_barang");
+  return mysqli_affected_rows($conn);
+}
