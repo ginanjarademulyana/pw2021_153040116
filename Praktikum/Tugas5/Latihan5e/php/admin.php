@@ -5,6 +5,18 @@ require 'functions.php';
 $kategori = kategori("SELECT * FROM kategori");
 $produk = produk("SELECT * FROM produk");
 
+if (isset($_GET['cari'])) {
+  $keyword = $_GET['keyword'];
+  $produk = produk("SELECT * FROM produk WHERE 
+                  kode_barang LIKE '%$keyword%' OR 
+                  nama_barang LIKE '%$keyword%' OR 
+                  ukuran LIKE '%$keyword%' OR 
+                  stok_barang LIKE '%$keyword%' OR 
+                  harga LIKE '%$keyword%' ");
+} else {
+  $produk = produk(" SELECT * FROM produk ");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -24,6 +36,10 @@ $produk = produk("SELECT * FROM produk");
   <div class="container-fluid">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
+        <form action="" method="get" class="form-inline">
+          <input class="form-control mr-sm-2" type="text" placeholder="Cari Barang" name="keyword" autofocus>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari</button>
+        </form>
         <a href="tambah.php"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
             Tambah Barang
           </button></a>

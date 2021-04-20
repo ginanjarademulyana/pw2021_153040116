@@ -24,6 +24,18 @@ $produk = produk("SELECT * FROM produk");
 </head>
 
 <body>
+  <br>
+  <div class="small-container">
+    <div class="row">
+      <form action="" method="get" class="form-inline">
+        <input class="form-control mr-sm-2" type="text" placeholder="Cari Barang" name="keyword" autofocus>
+        <button class="btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari</button>
+      </form>
+    </div>
+  </div>
+
+
+
   <!-- Kategori -->
   <div class="kategori">
     <div class="small-container">
@@ -70,6 +82,12 @@ $produk = produk("SELECT * FROM produk");
       <?php endforeach; ?>
     </div>
   </div>
+
+  <h3 class="title">
+    <a href="php/admin.php"><button class="btn">
+        Halaman Admin
+      </button></a>
+  </h3>
 
 </body>
 
