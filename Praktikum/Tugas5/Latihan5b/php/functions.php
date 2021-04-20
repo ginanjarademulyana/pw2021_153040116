@@ -40,3 +40,24 @@ function gallery($sql_g)
   }
   return $rows_g;
 }
+
+function tambah($data)
+{
+  $conn = koneksi();
+
+  $kodekt = htmlspecialchars($data['kode_kategori']);
+  $kodebr = htmlspecialchars($data['kode_barang']);
+  $namabr = htmlspecialchars($data['nama_barang']);
+  $ukr = htmlspecialchars($data['ukuran']);
+  $stkbr = htmlspecialchars($data['stok_barang']);
+  $hrg = htmlspecialchars($data['harga']);
+  $dkpbr = htmlspecialchars($data['deskripsi_produk']);
+  $gambar = htmlspecialchars($data['gambar']);
+
+  $db_p = "INSERT INTO produk
+      VALUES
+      ('$kodebr' , '$kodekt' , '$namabr' , '$ukr' , '$hrg' ,'$stkbr' , '$gambar' , '$dkpbr')";
+
+  mysqli_query($conn, $db_p);
+  return mysqli_affected_rows($conn);
+}
