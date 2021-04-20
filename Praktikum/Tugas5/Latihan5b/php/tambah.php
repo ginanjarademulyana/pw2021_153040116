@@ -16,7 +16,7 @@ $produk = produk("SELECT * FROM produk");
   <link rel="stylesheet" href="../css/style-2.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Add Product</title>
 </head>
 
 <body>
