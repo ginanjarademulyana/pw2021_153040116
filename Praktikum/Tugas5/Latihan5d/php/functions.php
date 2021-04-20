@@ -52,11 +52,38 @@ function tambah($data)
   $stkbr = htmlspecialchars($data['stok_barang']);
   $hrg = htmlspecialchars($data['harga']);
   $dkpbr = htmlspecialchars($data['deskripsi_produk']);
-  $gambar = htmlspecialchars($data['gambar']);
+  $gambar = htmlspecialchars($data['gambar_produk']);
 
   $db_p = "INSERT INTO produk
       VALUES
       ('$kodebr' , '$kodekt' , '$namabr' , '$ukr' , '$hrg' ,'$stkbr' , '$gambar' , '$dkpbr')";
+
+  mysqli_query($conn, $db_p);
+  return mysqli_affected_rows($conn);
+}
+
+function ubah($data)
+{
+  $conn = koneksi();
+
+  $kodebr = htmlspecialchars($data['kode_barang']);
+  $namabr = htmlspecialchars($data['nama_barang']);
+  $ukr = htmlspecialchars($data['ukuran']);
+  $stkbr = htmlspecialchars($data['stok_barang']);
+  $hrg = htmlspecialchars($data['harga']);
+  $dkpbr = htmlspecialchars($data['deskripsi_produk']);
+  $gambar = htmlspecialchars($data['gambar_produk']);
+
+  $db_p = "UPDATE produk
+      SET
+      nama_barang = '$namabr',
+      ukuran = '$ukr',
+      harga = '$hrg',
+      stok_barang = '$stkbr',
+      gambar_produk = '$gambar',
+      deskripsi_produk = '$dkpbr',
+      WHERE kode_barang = '$kodebr'
+      ";
 
   mysqli_query($conn, $db_p);
   return mysqli_affected_rows($conn);
