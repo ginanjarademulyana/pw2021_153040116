@@ -24,7 +24,6 @@ if (isset($_GET['cari'])) {
 
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/style-2.css">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,14 +31,21 @@ if (isset($_GET['cari'])) {
 </head>
 
 <body>
-  <h2 class="title">Admin Page</h2>
+  <ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="">Admin</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="logout.php">Logout</a>
+    </li>
+  </ul>
   <div class="container-fluid">
     <div class="card shadow mb-4">
       <div class="card-header py-3">
         <form action="" method="get" class="form-inline">
           <input class="form-control mr-sm-2" type="text" placeholder="Cari Barang" name="keyword" autofocus>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari</button>
-        </form>
+        </form><br>
         <a href="tambah.php"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
             Tambah Barang
           </button></a>
