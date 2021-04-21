@@ -95,3 +95,26 @@ function hapus($kode_barang)
   mysqli_query($conn, "DELETE FROM produk WHERE kode_barang = $kode_barang");
   return mysqli_affected_rows($conn);
 }
+
+function registrasi($data)
+{
+  $conn = koneksi();
+  $username = strtolower(stripcslashes($data["username"]));
+  $email = htmlspecialchars($data['email']);
+  $password = mysqli_real_escape_string($conn, $data["password"]);
+
+  $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
+  if (mysqli_fetch_assoc($result)) {
+    echo "<script>
+          alert('Username telah digunakan');
+          </script>";
+    return false;
+  }
+
+  $password = password_hash($password, PASSWORD_DEFAULT);
+
+  $query_tambah = "INSERT INTO user VALUES('', '$username', '$password', '$email')";
+  mysqli_query($conn, $query_tambah);
+
+  return mysqli_affected_rows($conn);
+}

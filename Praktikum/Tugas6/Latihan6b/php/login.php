@@ -11,27 +11,44 @@ if (isset($_SESSION['username'])) {
   exit;
 }
 
-if (isset($_POST['submit'])) {
+
+// ------------Fungsi Login-----------
+if (isset($_POST['login'])) {
   $username = $_POST['username'];
   $password = $_POST['password'];
   $cek_user = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
 
   if (mysqli_num_rows($cek_user) > 0) {
     $row = mysqli_fetch_assoc($cek_user);
-    if ($password == $row['password']) {
+    if (password_verify($password, $row['password'])) {
       $_SESSION['username'] = $_POST['username'];
-      $_SESSION['hash'] = $row['id'];
-    }
+      $_SESSION['hash'] = hash('sha256', $row['id'], false);
 
-    if ($row['id'] == $_SESSION['hash']) {
-      header("Location: admin.php");
+      if (hash('sha256', $row['id']) == $_SESSION['hash']) {
+        header("Location: admin.php");
+        die;
+      }
+      header("Location: ../index.php");
       die;
     }
-    header("Location: ../index.php");
-    die;
   }
   $error = true;
 }
+
+// ----------Fungsi Regist---------
+if (isset($_POST['register'])) {
+  if (registrasi($_POST) > 0) {
+    echo "<script>
+          alert('Registrasi Berhasil');
+          document.location.href = 'login.php';
+          </script>";
+  } else {
+    echo "<script>
+          alert('Registrasi Gagal');
+          </script>";
+  }
+}
+
 
 
 
@@ -65,15 +82,15 @@ if (isset($_POST['submit'])) {
               <label for="remember">Remember Me</label>
             </div>
 
-            <button type="submit" class="btn" name="submit">Login</button>
+            <button type="submit" class="btn" name="login">Login</button>
             <a href="">Forgot Password</a>
           </form>
 
-          <form id="RegistForm">
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <button type="submit" class="btn">Register</button>
+          <form id="RegistForm" method="post">
+            <input type="text" placeholder="Username" name="username">
+            <input type="email" placeholder="Email" name="email">
+            <input type="password" placeholder="Password" name="password">
+            <button type="submit" class="btn" name="register">Register</button>
           </form>
 
         </div>
