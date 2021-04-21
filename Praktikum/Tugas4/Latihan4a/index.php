@@ -1,4 +1,11 @@
 <?php
+
+// Ginanjar Ade Mulyana
+// 153040116
+// https://github.com/ginanjarademulyana/pw2021_153040116
+// Praktikum Jum'at 10:00 - 11:00 WIB
+
+
 $conn = mysqli_connect("localhost", "root", "");
 mysqli_select_db($conn, "pw_tubes_153040116");
 $db_k = mysqli_query($conn, "SELECT * FROM kategori");
