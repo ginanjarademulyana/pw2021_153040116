@@ -1,5 +1,10 @@
 <?php
 
+if (!isset($_SESSION["username"])) {
+  header("Location: login.php");
+  exit;
+}
+
 require 'functions.php';
 $kode_barang = $_GET['kode_barang'];
 

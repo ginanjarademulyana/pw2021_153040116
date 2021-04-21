@@ -24,6 +24,12 @@ if (isset($_POST['login'])) {
       $_SESSION['username'] = $_POST['username'];
       $_SESSION['hash'] = hash('sha256', $row['id'], false);
 
+      if (isset($_POST['remember'])) {
+        setcookie('username', $row['username'], time() + 60 * 60 * 24);
+        $hash = hash('sha256', $row['id']);
+        setcookie('hash', $hash, time() + 60 * 60 * 24);
+      }
+
       if (hash('sha256', $row['id']) == $_SESSION['hash']) {
         header("Location: admin.php");
         die;
@@ -33,6 +39,21 @@ if (isset($_POST['login'])) {
     }
   }
   $error = true;
+}
+
+// --------cek cookie-------------
+if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
+  $username = $_COOKIE['username'];
+  $hash = $_COOKIE['hash'];
+
+  $result = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
+  $row = mysqli_fetch_assoc($result);
+
+  if ($hash === hash('sha256', $row['id'], false)) {
+    $_SESSION['username'] = $row['username'];
+    header("Location: admin.php");
+    exit;
+  }
 }
 
 // ----------Fungsi Regist---------
