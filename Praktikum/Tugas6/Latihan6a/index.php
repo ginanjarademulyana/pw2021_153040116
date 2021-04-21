@@ -24,13 +24,34 @@ $produk = produk("SELECT * FROM produk");
 </head>
 
 <body>
-  <br>
-  <div class="small-container">
-    <div class="row">
-      <form action="" method="get" class="form-inline">
-        <input class="form-control mr-sm-2" type="text" placeholder="Cari Barang" name="keyword" autofocus>
-        <button class="btn-outline-success my-2 my-sm-0" type="submit" name="cari">Cari</button>
-      </form>
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <img src="assets/img/icons/logo.png" width="125px">
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="">Home</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="php/login.php">Account</a></li>
+          </ul>
+        </nav>
+        <img src="assets/img/icons/cart.png" width="30px" height="30px">
+        <img src="assets/img/icons/menu.png" class="menu-icon" onclick="menutoggle()">
+      </div>
+      <div class="row">
+        <div class="col-2">
+          <h1>Give Your Workout <br>A New Style!</h1>
+          <p>Success isn't always about greatness. It's about consistency. Consistent <br>hard work gain success. Greatness will come.</p>
+          <a href="" class="btn">Explore Now &#8594;</a>
+        </div>
+        <div class="col-2">
+          <img src="assets/img/image1.png">
+        </div>
+      </div>
     </div>
   </div>
 
@@ -83,12 +104,23 @@ $produk = produk("SELECT * FROM produk");
     </div>
   </div>
 
-  <h3 class="title">
-    <a href="php/admin.php"><button class="btn">
-        Halaman Admin
-      </button></a>
-  </h3>
 
+
+
+  <!-- ------------JS for Toggle Menu------------- -->
+  <script>
+    var MenuItems = document.getElementById("MenuItems");
+
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (MenuItems.style.maxHeight == "0px") {
+        MenuItems.style.maxHeight = "200px";
+      } else {
+        MenuItems.style.maxHeight = "0px";
+      }
+    }
+  </script>
 </body>
 
 </html>
