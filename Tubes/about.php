@@ -1,13 +1,3 @@
-<?php
-
-// Ginanjar Ade Mulyana
-// 153040116
-// https://github.com/ginanjarademulyana/pw2021_153040116
-// Praktikum Jum'at 10:00 - 11:00 WIB
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,11 +15,11 @@
   <nav>
     <div class="nav-left">
       <ul>
-        <a href="">
-          <li class="active nav_js">Home</li>
+        <a href="index.php">
+          <li class="nav_js">Home</li>
         </a>
         <a href="about.php">
-          <li class="nav_js">About</li>
+          <li class="active nav_js">About</li>
         </a>
         <a href="contact.php">
           <li class="nav_js">Contact</li>
@@ -38,8 +28,6 @@
       </ul>
     </div>
     <div class="nav-right nav_js">
-      <span></span>
-      <span></span>
     </div>
   </nav>
 
@@ -50,9 +38,9 @@
     </div>
 
     <div class="pagination sideBar_js">
+      <a href="index.php"><span></span></a>
       <span class="active"></span>
-      <span></span>
-      <span></span>
+      <a href="contact.php"><span></span></a>
     </div>
 
     <div class="scroll sideBar_js">
@@ -82,7 +70,7 @@
 
       <!-- Button -->
       <button class="content1">
-        Tugas Besar
+        Learn More
         <div class="svg">
           <img src="assets/svg/down-arrow.svg" alt="" />
         </div>
@@ -91,16 +79,12 @@
       <!-- Features -->
       <div class="features">
         <div class="features_content content1">
-          <a href="../Kuliah">
-            <h3>Tugas Perkuliahan</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </a>
+          <h3>Features</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
         </div>
         <div class="features_content content1">
-          <a href="../Praktikum">
-            <h3>Tugas Praktikum</h3>
-            <p>Lorem ipsum dolor sit</p>
-          </a>
+          <h3>Albums</h3>
+          <p>Lorem ipsum dolor sit</p>
         </div>
       </div>
     </div>
@@ -122,9 +106,9 @@
 
   <!-- ***** OverLay ****** -->
   <div class="black"></div>
-  <div class="ocean"></div>
+  <div class="red"></div>
 
-  <!-- JS -->
+  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
   <script src="assets/js/app.js"></script>
 </body>
