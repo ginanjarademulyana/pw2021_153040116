@@ -21,112 +21,30 @@
 </head>
 
 <body>
-  <!-- ***** NAV ***** -->
-  <nav>
-    <div class="nav-left">
-      <ul>
-        <a href="">
-          <li class="active nav_js">Home</li>
-        </a>
-        <a href="about.php">
-          <li class="nav_js">About</li>
-        </a>
-        <a href="contact.php">
-          <li class="nav_js">Contact</li>
-        </a>
-        <li class="nav_js"><i class="fas fa-search"></i></li>
-      </ul>
-    </div>
-    <div class="nav-right nav_js">
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-
-  <!-- ***** Side Bar ****** -->
-  <div class="sideBar">
-    <div class="logo sideBar_js">
-      <a href=""><img src="assets/img/logo.png" alt="" /></a>
-    </div>
-
-    <div class="pagination sideBar_js">
-      <span class="active"></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div class="scroll sideBar_js">
-      <p>SCROLL</p>
-      <div class="svg">
-        <img src="assets/svg/down-arrow.svg" alt="" />
-      </div>
-    </div>
-  </div>
-
-  <!-- ***** Contents ***** -->
-  <div class="contents">
-    <div class="contents_wrapper">
-      <!-- Title -->
-      <div class="title">
-        <h1 class="content1">Ginanjar Ade Mulyana</h1>
-        <h1 class="content1">Teknik Informatika</h1>
-        <h1 class="content1">Universitas Pasundan Bandung</h1>
-      </div>
-
-      <!-- Description -->
-      <div class="description content1">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-        error, explicabo non similique labore sapiente numquam consequatur
-        molestiae. Eaque, provident sit doloribus beatae nulla inventore!
-      </div>
-
-      <!-- Button -->
-      <button class="content1">
-        Tugas Besar
-        <div class="svg">
-          <img src="assets/svg/down-arrow.svg" alt="" />
+  <!-- ---------- HEADER ----------- -->
+  <header class="header">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="logo">
+          <a href="#">DORION</a>
         </div>
-      </button>
-
-      <!-- Features -->
-      <div class="features">
-        <div class="features_content content1">
-          <a href="../Kuliah">
-            <h3>Tugas Perkuliahan</h3>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </a>
-        </div>
-        <div class="features_content content1">
-          <a href="../Praktikum">
-            <h3>Tugas Praktikum</h3>
-            <p>Lorem ipsum dolor sit</p>
-          </a>
-        </div>
+        <button type="button" class="nav-toggler">
+          <span></span>
+        </button>
+        <nav class="nav">
+          <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Course</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
+  </header>
 
-    <!-- Social ICONS -->
-    <div class="social">
-      <i class="fab fa-facebook-f i_js"><span>facebook</span></i>
-      <i class="fab fa-instagram i_js"><span>instagram</span></i>
-      <i class="fab fa-twitter i_js"><span>twitter</span></i>
-      <i class="fab fa-youtube i_js"><span>youtube</span></i>
-      <i class="fab fa-discord i_js"><span>discord</span></i>
-    </div>
-  </div>
-
-  <!-- ***** BG IMAGE ***** -->
-  <div class="image">
-    <img src="assets/img/cover.png" alt="" />
-  </div>
-
-  <!-- ***** OverLay ****** -->
-  <div class="black"></div>
-  <div class="ocean"></div>
-
-  <!-- JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
-  <script src="assets/js/app.js"></script>
 </body>
+
+<script src="assets/js/app.js"></script>
 
 </html>
