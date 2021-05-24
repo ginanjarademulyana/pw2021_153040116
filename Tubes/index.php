@@ -32,16 +32,16 @@
 
         <div class="pages">
             <a href="index.php">
-                <img src="assets/img/icons/home.png" alt="">
+                <img src="assets/icon/home.png" alt="">
             </a>
             <a href="about.php">
-                <img src="assets/img/icons/user.png" alt="">
+                <img src="assets/icon/user.png" alt="">
             </a>
             <a href="contact.php">
-                <img src="assets/img/icons/contact.png" alt="">
+                <img src="assets/icon/contact.png" alt="">
             </a>
             <a href="courses.php">
-                <img src="assets/img/icons/layers.png" alt="">
+                <img src="assets/icon/layers.png" alt="">
             </a>
         </div>
     </div>
@@ -94,30 +94,30 @@
         <!-- Logo -->
         <div class="dorion">
             <div class="logo">
-                <img src="assets/img/icons/logo.png" alt="">
+                <img src="assets/icon/logo.png" alt="">
             </div>
         </div>
 
         <!-- Sosial -->
         <div class="sosial">
             <i class="i_gsap">
-                <a href="https://www.facebook.com/dorion.official" target="_blank"><img src="assets/img/icons/facebook.png"></a>
+                <a href="https://www.facebook.com/dorion.official" target="_blank"><img src="assets/icon/facebook.png"></a>
                 <span>Facebook</span>
             </i>
             <i class="i_gsap">
-                <a href="https://www.instagram.com/dorionsix/" target="_blank"><img src="assets/img/icons/instagram.png"></a>
+                <a href="https://www.instagram.com/dorionsix/" target="_blank"><img src="assets/icon/instagram.png"></a>
                 <span>Instagram</span>
             </i>
             <i class="i_gsap">
-                <a href="https://twitter.com/urangnuisukan" target="_blank"><img src="assets/img/icons/twitter.png"></a>
+                <a href="https://twitter.com/urangnuisukan" target="_blank"><img src="assets/icon/twitter.png"></a>
                 <span>Twitter</span>
             </i>
             <i class="i_gsap">
-                <a href="https://www.youtube.com/channel/UC9SFtDGajuZZXvUGETMCdgg" target="_blank"><img src="assets/img/icons/youtube.png"></a>
+                <a href="https://www.youtube.com/channel/UC9SFtDGajuZZXvUGETMCdgg" target="_blank"><img src="assets/icon/youtube.png"></a>
                 <span>Youtube</span>
             </i>
             <i class="i_gsap">
-                <a href="https://www.twitch.tv/dorionsix" target="_blank"><img src="assets/img/icons/twitch.png"></a>
+                <a href="https://www.twitch.tv/dorionsix" target="_blank"><img src="assets/icon/twitch.png"></a>
                 <span>Twitch</span>
             </i>
         </div>

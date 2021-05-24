@@ -1,3 +1,84 @@
+<?php
+
+// Ginanjar Ade Mulyana
+// 153040116
+// https://github.com/ginanjarademulyana/pw2021_153040116
+// Praktikum Jum'at 10:00 - 11:00 WIB
+
+session_start();
+
+require '../php/functions.php';
+
+
+if (isset($_SESSION['login'])) {
+    header("Location: myaccount.php");
+    exit;
+}
+
+
+// ------------Fungsi Login-----------
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $cek_user = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
+
+    if (mysqli_num_rows($cek_user) > 0) {
+        $row = mysqli_fetch_assoc($cek_user);
+        if (password_verify($password, $row['password'])) {
+            $_SESSION['username'] = $_POST['username'];
+            $_SESSION['hash'] = hash('sha256', $row['id'], false);
+
+            if (isset($_POST['remember'])) {
+                setcookie('username', $row['username'], time() + 60 * 60 * 24);
+                $hash = hash('sha256', $row['id']);
+                setcookie('hash', $hash, time() + 60 * 60 * 24);
+            }
+
+            if (hash('sha256', $row['id']) == $_SESSION['hash']) {
+                header("Location: myaccount.php");
+                die;
+            }
+            header("Location: ../index.php");
+            die;
+        }
+    }
+    $error = true;
+}
+
+// --------cek cookie-------------
+if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
+    $username = $_COOKIE['username'];
+    $hash = $_COOKIE['hash'];
+
+    $result = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
+    $row = mysqli_fetch_assoc($result);
+
+    if ($hash === hash('sha256', $row['id'], false)) {
+        $_SESSION['username'] = $row['username'];
+        header("Location: myaccount.php");
+        exit;
+    }
+}
+
+// ----------Fungsi Regist---------
+if (isset($_POST['register'])) {
+    if (registrasi($_POST) > 0) {
+        echo "<script>
+          alert('Registrasi Berhasil');
+          document.location.href = 'login.php';
+          </script>";
+    } else {
+        echo "<script>
+          alert('Registrasi Gagal');
+          </script>";
+    }
+}
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,19 +107,19 @@
             <div class="signin-signup">
 
                 <!-- Sign in -->
-                <form action="#" class="sign-in-form">
+                <form method="post" class="sign-in-form">
                     <h2 class="title">Sign in</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="#" id="#" placeholder="Usename">
+                        <input type="text" name="username" id="#" placeholder="Username" required>
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="text" name="#" id="#" placeholder="Password">
+                        <input type="password" name="password" id="#" placeholder="Password" required>
                     </div>
 
-                    <input type="submit" value="Login" class="btn solid">
+                    <input type="submit" name="login" class="btn solid">
 
                     <p class="social-text">Or Sign in with social platforms</p>
 
@@ -57,26 +138,26 @@
                     </div>
                 </form>
 
-                <!-- Sign up -->
 
-                <form action="#" class="sign-up-form">
+                <!-- Sign up -->
+                <form method="post" class="sign-up-form">
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="#" id="#" placeholder="Usename">
+                        <input type="text" name="username" id="#" placeholder="Username" required>
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" name="#" id="#" placeholder="Email">
+                        <input type="text" name="email" id="#" placeholder="Email" required>
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="text" name="#" id="#" placeholder="Password">
+                        <input type="password" name="password" id="#" placeholder="Password" required>
                     </div>
 
-                    <input type="submit" value="Login" class="btn solid">
+                    <input type="submit" name="register" class="btn solid">
 
                     <p class="social-text">Or Sign in with social platforms</p>
                     <div class="social-media">
@@ -96,6 +177,7 @@
             </div>
         </div>
 
+        <!-- --- Panel --- -->
         <div class="panels-container">
             <div class="panel left-panel">
                 <div class="content">
