@@ -10,7 +10,10 @@ require 'php/functions.php';
 $kategori = kategori("SELECT * FROM kategori");
 $produk = produk("SELECT * FROM produk");
 
-
+if (!isset($_SESSION['login'])) {
+  header("Location: account/login.php");
+  exit;
+}
 
 ?>
 
@@ -48,10 +51,11 @@ $produk = produk("SELECT * FROM produk");
             <li><a href="pp.php">Products</a></li>
             <li><a href="">About</a></li>
             <li><a href="">Contact</a></li>
-            <li><a href="../account/myaccount.php">Account</a></li>
+            <li><a href="account/myaccount.php">Account</a></li>
+            <li><a href="account/logout.php">Logout</a></li>
           </ul>
         </nav>
-        <a href="cart.php"><img src="assets/icons/cart.png" width="25px" height="30px"></a>
+        <img src="assets/icons/cart.png" width="25px" height="30px">
         <img src="assets/icons/menu.png" class="menu-icon" onclick="menutoggle()">
       </div>
 

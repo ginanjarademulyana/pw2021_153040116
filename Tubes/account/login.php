@@ -7,10 +7,10 @@
 
 session_start();
 
-require '../php/functions.php';
+require 'functions.php';
 
 
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['username'])) {
     header("Location: myaccount.php");
     exit;
 }
@@ -91,7 +91,7 @@ if (isset($_POST['register'])) {
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- --- My CSS --- -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/login.css" />
 
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
@@ -109,6 +109,9 @@ if (isset($_POST['register'])) {
                 <!-- Sign in -->
                 <form method="post" class="sign-in-form">
                     <h2 class="title">Sign in</h2>
+                    <?php if (isset($error)) : ?>
+                        <p style="color:red; font-style:italic;">Username atau Password Salah!</p>
+                    <?php endif; ?>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" name="username" id="#" placeholder="Username" required>

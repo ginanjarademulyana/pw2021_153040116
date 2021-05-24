@@ -4,7 +4,9 @@
 // 153040116
 // https://github.com/ginanjarademulyana/pw2021_153040116
 
-if (!isset($_SESSION['login'])) {
+session_start();
+
+if (!isset($_SESSION['username'])) {
     header("Location: login.php");
     exit;
 }
@@ -22,7 +24,8 @@ if (!isset($_SESSION['login'])) {
 </head>
 
 <body>
-    <a href="../index.php">back</a>
+    <a href="../frontEnd/index.php">back</a>
+    <a href="logout.php">Logout</a>
 </body>
 
 </html>

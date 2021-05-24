@@ -27,16 +27,16 @@ $gallery = gallery("SELECT * FROM gallery WHERE kode_barang = $kode_barang");
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Red Store </title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="..assets/css/style.css">
 
   <title>Detail Produk</title>
 </head>
 
 <body>
-  <div class="product-detail">
+  <div class="small-container single-product">
     <div class="row">
       <div class="col-2">
-        <img src="../assets/img/products/<?= $prdk["gambar_produk"]; ?>" width="50%" id="product-img">
+        <img src="../assets/img/products/<?= $prdk["gambar_produk"]; ?>" width="100%" id="product-img">
 
         <div class="small-img-row">
           <?php foreach ($gallery as $gal) : ?>
@@ -56,7 +56,7 @@ $gallery = gallery("SELECT * FROM gallery WHERE kode_barang = $kode_barang");
         </select>
         <br>
         <p>Stok : <?= $prdk["stok_barang"]; ?></p>
-        <a href="../index.php" class="btn">Add To Cart</a>
+        <a href="../index.php" class="btn">Back</a>
 
         <h3>Product Details <i class="fa fa-indent"></i></h3>
         <br>
