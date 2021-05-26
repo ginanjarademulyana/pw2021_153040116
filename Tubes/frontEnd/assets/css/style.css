@@ -14,9 +14,6 @@
 
 body {
   font-family: "Open Sans";
-}
-
-.header {
   background: radial-gradient(rgb(61, 61, 61), rgb(44, 44, 44));
 }
 
@@ -66,10 +63,8 @@ p {
 }
 
 .home {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  margin-bottom: 250px;
+  margin-top: 150px;
 }
 
 .home .row {
@@ -222,6 +217,222 @@ p {
   padding: 50px 0;
 }
 
+/* --- Product Details --- */
+.card-wrapper {
+  max-width: 1100px;
+  margin: 50px auto;
+  margin-bottom: 100px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.card-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.card-wrapper .img-display {
+  overflow: hidden;
+}
+
+.img-showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+
+.img-showcase img {
+  min-width: 100%;
+}
+
+.img-select {
+  display: flex;
+}
+
+.img-item {
+  margin: 0.3rem;
+}
+
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3) {
+  margin-right: 0;
+}
+
+.img-item:hover {
+  opacity: 0.8;
+}
+
+.product-content {
+  padding-top: 0;
+  padding: 2rem 1rem;
+}
+
+.product-title {
+  font-size: 3rem;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  color: #ffffff;
+  margin: 1rem 0;
+}
+
+.product-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 80px;
+  background: #ffffff;
+}
+
+.product-galery {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-link:hover {
+  opacity: 0.9;
+}
+
+.product-rating {
+  color: #ffc107;
+}
+
+.product-rating span {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.product-price {
+  margin: 1rem 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.product-price p {
+  color: #fff;
+}
+
+.product-price span {
+  font-weight: 400;
+}
+
+.new-price span {
+  color: #ffffff;
+}
+
+.product-detail h2 {
+  text-transform: capitalize;
+  color: #ffffff;
+  padding-bottom: 0.6rem;
+}
+
+.product-detail p {
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  opacity: 0.8;
+}
+
+.product-detail ul {
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.product-detail ul li {
+  color: #fff;
+  margin: 0;
+  list-style: none;
+  background-size: 18px;
+  padding-left: 1.7rem;
+  margin: 0.4rem 0;
+  font-weight: 600;
+}
+
+.product-detail ul li span {
+  font-weight: 400;
+}
+
+.purchase-info {
+  margin: 1.5rem 0;
+}
+
+.purchase-info input,
+.purchase-info .btn {
+  border: 1.5px solid #ddd;
+  border-radius: 25px;
+  text-align: center;
+  padding: 0.45rem 0.8rem;
+  outline: 0;
+  margin-right: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.purchase-info input {
+  width: 60px;
+}
+
+.purchase-info .btn {
+  cursor: pointer;
+  color: #fff;
+}
+
+.purchase-info .btn {
+  background: none;
+}
+
+.purchase-info .btn:hover {
+  background: #575757;
+  opacity: 0.9;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social-links p {
+  color: #fff;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  border: 1px solid #fff;
+  margin: 0 0.2rem;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all 0.5s ease;
+}
+
+.social-links a:hover {
+  background: #000;
+  border-color: transparent;
+  color: #fff;
+}
+
 /* --- Footer --- */
 .footer {
   background-color: var(--grey1);
@@ -357,4 +568,36 @@ p {
     width: 50%;
     margin-bottom: 30px;
   }
+
+  .home {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .colom {
+    flex-basis: 100%;
+    min-width: 100px;
+  }
+
+  .colom h1 {
+    font-size: 25px;
+    margin: auto 5px;
+    text-align: center;
+  }
+
+  .colom p {
+    font-size: 12px;
+    text-align: center;
+    color: #ffff;
+  }
+  .title {
+    text-align: center;
+    margin: 0 auto 30px;
+    position: relative;
+    line-height: 60px;
+    color: #fff;
+  }
+}
+
+@media screen and (min-width: 992px) {
 }

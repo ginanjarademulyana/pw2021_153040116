@@ -11,7 +11,7 @@ require 'functions.php';
 
 
 if (isset($_SESSION['username'])) {
-    header("Location: myaccount.php");
+    header("Location: ../frontEnd/index.php");
     exit;
 }
 
@@ -35,9 +35,13 @@ if (isset($_POST['login'])) {
             }
 
             if (hash('sha256', $row['id']) == $_SESSION['hash']) {
-                header("Location: myaccount.php");
+                header("Location: ../frontEnd/index.php");
                 die;
             }
+            // else if ($cek_user['level'] == "admin") {
+            //     $_SESSION['username'] = $_POST['username'];
+            //     header("Location: ../backEnd/index.php");
+            // }
             header("Location: ../index.php");
             die;
         }
@@ -158,6 +162,11 @@ if (isset($_POST['register'])) {
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
                         <input type="password" name="password" id="#" placeholder="Password" required>
+                    </div>
+
+                    <div class="input-field" style="display: none;">
+                        <i class="fas fa-lock"></i>
+                        <input type="level" name="level" id="#" placeholder="level" value="user">
                     </div>
 
                     <input type="submit" name="register" class="btn solid">

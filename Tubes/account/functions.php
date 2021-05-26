@@ -107,6 +107,7 @@ function registrasi($data)
   $username = strtolower(stripcslashes($data["username"]));
   $email = htmlspecialchars($data['email']);
   $password = mysqli_real_escape_string($conn, $data["password"]);
+  $level = htmlspecialchars($data['level']);
 
   $result = mysqli_query($conn, "SELECT username FROM user WHERE username = '$username'");
   if (mysqli_fetch_assoc($result)) {
@@ -118,7 +119,7 @@ function registrasi($data)
 
   $password = password_hash($password, PASSWORD_DEFAULT);
 
-  $query_tambah = "INSERT INTO user VALUES('', '$username', '$password', '$email')";
+  $query_tambah = "INSERT INTO user VALUES('', '$username', '$password', '$email', '$level')";
   mysqli_query($conn, $query_tambah);
 
   return mysqli_affected_rows($conn);

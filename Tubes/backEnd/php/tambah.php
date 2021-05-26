@@ -9,11 +9,12 @@ session_start();
 
 
 if (!isset($_SESSION["username"])) {
-  header("Location: login.php");
+  header("Location: ../../account/login.php");
   exit;
 }
 
 require 'functions.php';
+require 'layout/sidebar.php';
 
 $kategori = kategori("SELECT * FROM kategori");
 $produk = produk("SELECT * FROM produk");
@@ -34,87 +35,80 @@ if (isset($_POST['tambah'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<div class="main-content">
+  <div class="row">
+    <div class="col-12">
+      <div class="box">
+        <div class="box-body overflow-scroll">
+          <div class="container mt-2">
 
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="../css/style-2.css">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Page</title>
-</head>
+            <form action="" class="form" method="POST">
+              <h1 class="form_title">Add Product</h1>
 
-<body>
-  <div class="container">
-    <br>
-    <h2 style="text-align: center;">Tambah Barang</h2>
-    <br>
-  </div>
+              <div class="form_div">
+                <label for="kode_kategori"></label>
+                <select class="form_control" name="kode_kategori" id="kode_kategori" required>
+                  <option style="color:#fff;">
+                    -- Select Category --
+                  </option>
+                  <?php $i = 1; ?>
+                  <?php foreach ($kategori as $ktg) : ?>
+                    <option style="color:#fff;" value="<?= $i; ?>"><?= $ktg['kode_kategori']; ?> <?= $ktg['nama_kategori']; ?></option>
+                    <?php $i++; ?>
+                  <?php endforeach; ?>
+                </select>
+              </div>
+
+              <div class="form_div">
+                <input type="text" class="form_input2" placeholder=" " name="kode_barang" id="kode_barang" required>
+                <label for="kode_barang" class="label">Product Code</label>
+              </div>
+
+              <div class="form_div">
+                <input type="text" class="form_input1" placeholder=" " name="nama_barang" id="nama_barang" required>
+                <label for="nama_barang" class="label">Product Name</label>
+              </div>
+
+              <div class="form_div">
+                <input type="text" class="form_input3" placeholder=" " name="ukuran" id="ukuran" required>
+                <label for="ukuran" class="label">Size</label>
+              </div>
+
+              <div class="form_div">
+                <input type="text" class="form_input3" placeholder=" " name="stok_barang" id="stok_barang" required>
+                <label for="stok_barang" class="label">Stock</label>
+              </div>
+
+              <div class="form_div">
+                <input type="text" class="form_input2" placeholder=" " name="harga" id="harga" required>
+                <label for="harga" class="label">Price</label>
+              </div>
+
+              <div class="form_div">
+                <input type="text" class="form_input4" placeholder=" " name="deskripsi_produk" id="deskripsi_produk" required>
+                <label for="deskripsi_produk" class="label">Product Description</label>
+              </div>
+
+              <div class="form_div">
+                <input type="file" name="gambar_produk" id="gambar_produk" required>
+              </div>
 
 
-  <div class="container mt-2">
-    <form class="form-group" action="" method="POST">
-      <div class="jumbotron">
-        <div class="form-row">
+              <button class="btn" type="submit" name="tambah">Add Product</button>
+            </form>
 
-          <div class="form-group col-md-2">
-            <label for="kode_kategori">Kategori</label>
-            <select class="form-control" name="kode_kategori" id="kode_kategori" required>
-              <option>Pilih Kategori</option>
-              <?php $i = 1; ?>
-              <?php foreach ($kategori as $ktg) : ?>
-                <option value="<?= $i; ?>"><?= $ktg['kode_kategori']; ?> <?= $ktg['nama_kategori']; ?></option>
-                <?php $i++; ?>
-              <?php endforeach; ?>
-            </select>
+
+
           </div>
-
-          <div class="form-group col-md-1">
-            <label for="kode_barang">Kode Barang</label>
-            <input class="form-control" type="text" name="kode_barang" id="kode_barang" required>
-          </div>
-
-          <div class="form-group col-md-3">
-            <label for="nama_barang">Nama Barang</label>
-            <input class="form-control" type="text" name="nama_barang" id="nama_barang" required>
-          </div>
-
-          <div class="form-group col-md-2">
-            <label for="ukuran">Ukuran</label>
-            <input class="form-control" type="text" name="ukuran" id="ukuran" required>
-          </div>
-
-          <div class="form-group col-md-1">
-            <label for="stok_barang">Stok Barang</label>
-            <input class="form-control" type="text" name="stok_barang" id="stok_barang" required>
-          </div>
-
-          <div class="form-group col-md-3">
-            <label for="harga">Harga Barang</label>
-            <input class="form-control" type="text" name="harga" id="harga" placeholder="Rp." required>
-          </div>
-
-
-
-
-          <div class="form-group col-md-12">
-            <label for="deskripsi_produk">Deskripsi Barang</label>
-            <input class="form-control" type="text" name="deskripsi_produk" id="deskripsi_produk" placeholder="Sertakan Deskripsi Barang" required>
-          </div>
-
-          <div class="form-group col-md-4">
-            <label for="gambar_produk">Gambar Produk</label> <br>
-            <input type="file" name="gambar_produk" id="gambar_produk" required>
-          </div>
-
         </div>
-        <button class="btn btn-success" type="submit" name="tambah">Tambah Produk</button>
-        <button type="submit" class="btn btn-danger">
-          <a href="admin.php" style="text-decoration:none; color:white;">Kembali</a>
-        </button>
-    </form>
+      </div>
+    </div>
   </div>
+</div>
+<div class="overlay"></div>
+
+<!-- APP JS -->
+<script src="../assets/js/app.js"></script>
 </body>
 
 

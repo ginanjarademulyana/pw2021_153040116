@@ -113,7 +113,7 @@
                 <span>Twitter</span>
             </i>
             <i class="i_gsap">
-                <a href="https://www.youtube.com/channel/UC9SFtDGajuZZXvUGETMCdgg" target="_blank"><img src="assets/icon/youtube.png"></a>
+                <a href="https://www.youtube.com/channel/UCT1aoktP67LdnBRS_OibiTw" target="_blank"><img src="assets/icon/youtube.png"></a>
                 <span>Youtube</span>
             </i>
             <i class="i_gsap">

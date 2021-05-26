@@ -17,10 +17,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title> NSO Store </title>
-    <link rel="shortcut icon" href="../assets/icons/iconNSO.png" type="image/png">
 
     <!-- --- My CSS --- -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
     <!-- --- Font Awesome --- -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -35,19 +34,19 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="../assets/icons/Logo-Putih.png" width="125px">
+                    <img src="../../assets/icons/Logo-putih.png" width="125px">
                 </div>
                 <nav>
                     <ul id="MenuItems">
-                        <li><a href="">Home</a></li>
+                        <li><a href="../index.php">Home</a></li>
                         <li><a href="pp.php">Products</a></li>
                         <li><a href="">About</a></li>
                         <li><a href="">Contact</a></li>
                         <li><a href="../account/myaccount.php">Account</a></li>
                     </ul>
                 </nav>
-                <a href="cart.php"><img src="../assets/icons/cart.png" width="25px" height="30px"></a>
-                <img src="../assets/icons/menu.png" class="menu-icon" onclick="menutoggle()">
+                <a href="cart.php"><img src="../../assets/icons/cart.png" width="25px" height="30px"></a>
+                <img src="../../assets/icons/menu.png" class="menu-icon" onclick="menutoggle()">
             </div>
         </div>
     </div>

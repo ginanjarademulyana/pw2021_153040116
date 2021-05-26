@@ -13,27 +13,112 @@ if (
 }
 
 require 'functions.php';
+require 'layout/header.php';
 
 $kode_barang = $_GET["kode_barang"];
+$kode_kategori = $_GET["kategori"];
 $prdk = produk("SELECT * FROM produk WHERE kode_barang = $kode_barang")[0];
-$gallery = gallery("SELECT * FROM gallery WHERE kode_barang = $kode_barang");
+$gal = gallery("SELECT * FROM gallery WHERE kode_barang = $kode_barang");
+$kat = kategori("SELECT * FROM kategori WHERE kode_kategori = $kode_kategori")[0];
+
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> Red Store </title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+<div class="card-wrapper">
+  <div class="card">
+    <!-- Gambar Utama -->
+    <div class="product-galery">
+      <div class="img-display">
+        <div class="img-showcase">
+          <img src="../assets/img/products/<?= $prdk["gambar_produk"]; ?>" width="50%" id="product-img">
+        </div>
+      </div>
 
-  <title>Detail Produk</title>
-</head>
+      <!-- Gallery -->
+      <div class="img-select">
+        <div class="img-item">
+          <a href="#" data-id="1">
+            <img src="../assets/img/products/<?= $prdk["gambar_produk"]; ?>" width="50%" id="product-img">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="2">
+            <img src="shoes_images/shoe_2.jpg" alt="shoe image">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="3">
+            <img src="shoes_images/shoe_3.jpg" alt="shoe image">
+          </a>
+        </div>
+        <div class="img-item">
+          <a href="#" data-id="4">
+            <img src="shoes_images/shoe_4.jpg" alt="shoe image">
+          </a>
+        </div>
+      </div>
+    </div>
 
-<body>
-  <div class="product-detail">
+    <!-- Deskripsi -->
+    <div class="product-content">
+      <h2 class="product-title"><?= $prdk["nama_barang"]; ?></h2>
+      <div class="product-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+        <span>4.7(21)</span>
+      </div>
+
+      <div class="product-price">
+        <p class="new-price">Rp. <span><?= $prdk["harga"]; ?></span></p>
+      </div>
+
+      <div class="product-detail">
+        <h2>product deskription : </h2>
+        <p><?= $prdk["deskripsi_produk"]; ?></p>
+        <ul>
+          <li>Color: <span>Black</span></li>
+          <li>Available: <span><?= $prdk["stok_barang"]; ?></span></li>
+          <li>Category: <span><?= $kat["nama_kategori"]; ?></span></li>
+          <li>Shipping Area: <span>All over the world</span></li>
+          <li>Shipping Fee: <span>Free</span></li>
+        </ul>
+      </div>
+
+      <div class="purchase-info">
+        <input type="number" min="0" value="1">
+        <a href="cart.php">
+          <button type="button" class="btn">
+            Add to Cart <i class="fas fa-shopping-cart"></i>
+          </button>
+        </a>
+      </div>
+
+      <div class="social-links">
+        <p>Share At : </p>
+        <a href="#">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="#">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="product-detail">
     <div class="row">
       <div class="col-2">
         <img src="../assets/img/products/<?= $prdk["gambar_produk"]; ?>" width="50%" id="product-img">
@@ -63,7 +148,11 @@ $gallery = gallery("SELECT * FROM gallery WHERE kode_barang = $kode_barang");
         <p><?= $prdk["deskripsi_produk"]; ?></p>
       </div>
     </div>
-  </div>
-</body>
+  </div> -->
 
-</html>
+
+<?php
+
+require 'layout/footer.php';
+
+?>

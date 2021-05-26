@@ -12,7 +12,7 @@ if (!isset($_SESSION["username"])) {
   exit;
 }
 
-require 'functions.php';
+require 'php/functions.php';
 
 $kategori = kategori("SELECT * FROM kategori");
 $produk = produk("SELECT * FROM produk");
