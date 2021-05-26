@@ -56,7 +56,7 @@ $gallery = gallery("SELECT * FROM gallery WHERE kode_barang = $kode_barang");
         </select>
         <br>
         <p>Stok : <?= $prdk["stok_barang"]; ?></p>
-        <a href="../index.php" class="btn">Add To Cart</a>
+        <a href="cart.php" class="btn">Add To Cart</a>
 
         <h3>Product Details <i class="fa fa-indent"></i></h3>
         <br>
