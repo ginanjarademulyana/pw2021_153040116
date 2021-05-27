@@ -21,8 +21,6 @@
 </head>
 
 <body>
-
-    <!-- MAIN CONTENT -->
     <div class="main">
         <div class="main-header">
             <div class="mobile-toggle" id="mobile-toggle">
@@ -63,63 +61,6 @@
                         <span>dashboard</span>
                     </a>
                 </li>
-                <!-- <li>
-                <a href="#">
-                    <i class='bx bx-shopping-bag'></i>
-                    <span>sales</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-chart'></i>
-                    <span>analytic</span>
-                </a>
-            </li>
-
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                    <i class='bx bx-user-circle'></i>
-                    <span>account</span>
-                    <div class="dropdown-icon"></div>
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#">
-                            edit profile
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            account settings
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            billing
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="sidebar-submenu">
-                <a href="#" class="sidebar-menu-dropdown">
-                    <i class='bx bx-category'></i>
-                    <span>project</span>
-                    <div class="dropdown-icon"></div>
-                </a>
-                <ul class="sidebar-menu sidebar-menu-dropdown-content">
-                    <li>
-                        <a href="#">
-                            list
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            add project
-                        </a>
-                    </li>
-                </ul>
-            </li> -->
 
                 <li class="sidebar-submenu">
                     <a href="#" class="sidebar-menu-dropdown">
@@ -160,26 +101,8 @@
                         </li>
                     </ul>
                 </li>
-
-                <!-- <li>
-                <a href="#">
-                    <i class='bx bx-mail-send'></i>
-                    <span>mail</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-chat'></i>
-                    <span>chat</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class='bx bx-calendar'></i>
-                    <span>calendar</span>
-                </a>
-            </li> -->
             </ul>
-            <!-- AWAL MENU SIDEBAR -->
+            <!-- AKHIR MENU SIDEBAR -->
+
         </div>
-        <!-- AKHIR SIDEBAR -->
+        <!-- AKHIT SIDEBAR -->
