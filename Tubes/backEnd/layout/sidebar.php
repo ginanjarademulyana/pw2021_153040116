@@ -58,7 +58,7 @@
             <!-- AWAL MENU SIDEBAR -->
             <ul class="sidebar-menu">
                 <li>
-                    <a href="#" class="active">
+                    <a href="index.php" class="active">
                         <i class='bx bx-home'></i>
                         <span>dashboard</span>
                     </a>
@@ -129,12 +129,12 @@
                     </a>
                     <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a href="#">
+                            <a href="php/listCategory.php">
                                 list category
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="php/addCategory.php">
                                 add category
                             </a>
                         </li>
@@ -154,7 +154,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="php/addProduct.php">
                                 add product
                             </a>
                         </li>

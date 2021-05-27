@@ -72,12 +72,12 @@
                     </a>
                     <ul class="sidebar-menu sidebar-menu-dropdown-content">
                         <li>
-                            <a href="#">
+                            <a href="listCategory.php">
                                 list category
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="addCategory.php">
                                 add category
                             </a>
                         </li>
@@ -97,7 +97,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="tambah.php">
+                            <a href="addProduct.php">
                                 add product
                             </a>
                         </li>

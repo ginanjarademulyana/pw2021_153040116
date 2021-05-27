@@ -5,6 +5,15 @@
 // https://github.com/ginanjarademulyana/pw2021_153040116
 // Praktikum Jum'at 10:00 - 11:00 WIB
 
+
+session_start();
+
+
+if (!isset($_SESSION["username"])) {
+    header("Location: ../../account/login.php");
+    exit;
+}
+
 require 'layout/sidebar.php';
 
 ?>
@@ -15,7 +24,7 @@ require 'layout/sidebar.php';
     <div class="row">
         <div class="col-3 col-md-6 col-sm-12">
             <div class="box box-hover">
-                <!-- COUNTER -->
+                <!-- AWAL COUNTER -->
                 <div class="counter">
                     <div class="counter-title">
                         total order
@@ -27,13 +36,11 @@ require 'layout/sidebar.php';
                         <i class='bx bx-shopping-bag'></i>
                     </div>
                 </div>
-                <!-- END COUNTER -->
             </div>
         </div>
 
         <div class="col-3 col-md-6 col-sm-12">
             <div class="box box-hover">
-                <!-- COUNTER -->
                 <div class="counter">
                     <div class="counter-title">
                         conversion rate
@@ -45,13 +52,11 @@ require 'layout/sidebar.php';
                         <i class='bx bx-chat'></i>
                     </div>
                 </div>
-                <!-- END COUNTER -->
             </div>
         </div>
 
         <div class="col-3 col-md-6 col-sm-12">
             <div class="box box-hover">
-                <!-- COUNTER -->
                 <div class="counter">
                     <div class="counter-title">
                         total profit
@@ -63,13 +68,11 @@ require 'layout/sidebar.php';
                         <i class='bx bx-line-chart'></i>
                     </div>
                 </div>
-                <!-- END COUNTER -->
             </div>
         </div>
 
         <div class="col-3 col-md-6 col-sm-12">
             <div class="box box-hover">
-                <!-- COUNTER -->
                 <div class="counter">
                     <div class="counter-title">
                         daily visitors
@@ -81,14 +84,13 @@ require 'layout/sidebar.php';
                         <i class='bx bx-user'></i>
                     </div>
                 </div>
-                <!-- END COUNTER -->
             </div>
         </div>
+        <!-- END COUNTER -->
     </div>
 
 
     <div class="col-12">
-        <!-- ORDERS TABLE -->
         <div class="box">
             <div class="box-header">
                 Recent orders
@@ -219,14 +221,8 @@ require 'layout/sidebar.php';
                 </table>
             </div>
         </div>
-        <!-- END ORDERS TABLE -->
     </div>
 </div>
-</div>
-</div>
-<!-- END MAIN CONTENT -->
-
-<div class="overlay"></div>
 
 <!-- APP JS -->
 <script src="assets/js/app.js"></script>

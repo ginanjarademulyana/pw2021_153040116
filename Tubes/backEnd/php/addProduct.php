@@ -16,19 +16,16 @@ if (!isset($_SESSION["username"])) {
 require 'functions.php';
 require 'layout/sidebar.php';
 
-$kategori = kategori("SELECT * FROM kategori");
-$produk = produk("SELECT * FROM produk");
-
 if (isset($_POST['tambah'])) {
   if (tambah($_POST) > 0) {
     echo "<script>
           alert('Data Berhasil Ditambahkan!');
-          document.location.href = 'admin.php';
+          document.location.href = 'listProduct.php';
           </script>";
   } else {
     echo "<script>
           alert('Data Gagal Ditambahkan!');
-          document.location.href = 'admin.php';
+          document.location.href = 'listProduct.php';
           </script>";
   }
 }
@@ -105,10 +102,10 @@ if (isset($_POST['tambah'])) {
     </div>
   </div>
 </div>
-<div class="overlay"></div>
 
 <!-- APP JS -->
 <script src="../assets/js/app.js"></script>
+
 </body>
 
 

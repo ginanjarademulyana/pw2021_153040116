@@ -346,20 +346,6 @@ table td {
   overflow-y: auto;
 }
 
-.overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: none;
-}
-
-.overlay.active {
-  display: block;
-}
-
 .form {
   width: 360px;
   border-radius: 1rem;
@@ -442,6 +428,22 @@ table td {
   color: #dadce0;
 }
 
+.form_inputI {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 150%;
+  font-size: var(--normal-font-size);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  outline: none;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+  color: #dadce0;
+}
+
 .form_control {
   position: absolute;
   top: 0;
@@ -475,7 +477,8 @@ table td {
 .form_input1:focus + .label,
 .form_input2:focus + .label,
 .form_input3:focus + .label,
-.form_input4:focus + .label {
+.form_input4:focus + .label,
+.form_inputI:focus + .label {
   top: -0.5rem;
   left: 0.8rem;
   color: #fff;
@@ -488,7 +491,8 @@ table td {
 .form_input1:not(:placeholder-shown).form_input1:not(:focus) + .label,
 .form_input2:not(:placeholder-shown).form_input2:not(:focus) + .label,
 .form_input3:not(:placeholder-shown).form_input3:not(:focus) + .label,
-.form_input4:not(:placeholder-shown).form_input4:not(:focus) + .label {
+.form_input4:not(:placeholder-shown).form_input4:not(:focus) + .label,
+.form_inputI:not(:placeholder-shown).form_inputI:not(:focus) + .label {
   top: -0.5rem;
   left: 0.8rem;
   font-size: var(--small-font-size);
@@ -500,7 +504,8 @@ table td {
 .form_input1:focus,
 .form_input2:focus,
 .form_input3:focus,
-.form_input4:focus {
+.form_input4:focus,
+.form_inputI:focus {
   border: 1.5px solid #fff;
 }
 

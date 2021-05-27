@@ -12,6 +12,7 @@ if (!isset($_SESSION["username"])) {
 }
 
 require 'functions.php';
+
 $kode_barang = $_GET['kode_barang'];
 
 if (hapus($kode_barang) > 0) {

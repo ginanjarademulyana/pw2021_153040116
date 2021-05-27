@@ -5,6 +5,14 @@
 // https://github.com/ginanjarademulyana/pw2021_153040116
 // Praktikum Jum'at 10:00 - 11:00 WIB
 
+
+session_start();
+
+if (!isset($_SESSION["username"])) {
+    header("Location: login.php");
+    exit;
+}
+
 require 'functions.php';
 require 'layout/sidebar.php';
 
@@ -41,7 +49,7 @@ $produk = produk("SELECT * FROM produk");
                                 <tr>
                                     <td> <?= $i; ?> </td>
                                     <td>
-                                        <a href="ubah.php?kode_barang=<?= $prod['kode_barang']; ?>"><button type="submit" name="edit_btn" class="btn">Ubah</button></a>
+                                        <a href="changeProduct.php?kode_barang=<?= $prod['kode_barang']; ?>"><button type="submit" name="edit_btn" class="btn">Ubah</button></a>
                                         <a href="hapus.php?kode_barang=<?= $prod['kode_barang']; ?>" onclick="return confirm ('Hapus Data Barang ?')"><button type="submit" name="delete_btn" class="btn">Hapus</button></a>
                                     </td>
                                     <td><img src="../../frontEnd/assets/img/products/<?= $prod['gambar_produk']; ?>" width="10%;"></td>
@@ -60,7 +68,6 @@ $produk = produk("SELECT * FROM produk");
     </div>
 </div>
 
-<div class="overlay"></div>
 <!-- APP JS -->
 <script src="../assets/js/app.js"></script>
 </body>

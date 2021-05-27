@@ -14,15 +14,12 @@ document.querySelectorAll('.sidebar-submenu').forEach(e => {
     }
 })
 
-let overlay = document.querySelector('.overlay')
 let sidebar = document.querySelector('.sidebar')
 
 document.querySelector('#mobile-toggle').onclick = () => {
     sidebar.classList.toggle('active')
-    overlay.classList.toggle('active')
 }
 
 document.querySelector('#sidebar-close').onclick = () => {
     sidebar.classList.toggle('active')
-    overlay.classList.toggle('active')
 }
