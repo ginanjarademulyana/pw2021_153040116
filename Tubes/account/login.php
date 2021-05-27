@@ -121,12 +121,12 @@ if (isset($_POST['register'])) {
                     <?php endif; ?>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="username" id="#" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" required>
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="password" id="#" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required>
                     </div>
 
                     <input type="submit" name="login" class="btn solid">
@@ -154,22 +154,22 @@ if (isset($_POST['register'])) {
                     <h2 class="title">Sign up</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="username" id="#" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" required>
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-envelope"></i>
-                        <input type="text" name="email" id="#" placeholder="Email" required>
+                        <input type="text" name="email" placeholder="Email" required>
                     </div>
 
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" name="password" id="#" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required>
                     </div>
 
                     <div class="input-field" style="display: none;">
                         <i class="fas fa-lock"></i>
-                        <input type="level" name="level" id="#" placeholder="level" value="user">
+                        <input type="level" name="level" placeholder="level" value="user">
                     </div>
 
                     <input type="submit" name="register" class="btn solid">
