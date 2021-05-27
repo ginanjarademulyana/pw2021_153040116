@@ -103,6 +103,7 @@ if (isset($_POST['register'])) {
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
     <title>NSO | Login</title>
+    <link rel="shortcut icon" href="../assets/icons/iconNSO.png" type="image/png">
 
 
 </head>
