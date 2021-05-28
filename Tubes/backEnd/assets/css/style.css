@@ -289,21 +289,15 @@ table {
   font-weight: 500;
 }
 
-.order-owner img {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
 table thead tr {
-  text-align: left;
+  text-align: center;
 }
 
 table th,
 table td {
   padding: 20px 0;
   border-bottom: 1px solid var(--border-color);
+  text-align: center;
 }
 
 .order-status {
@@ -507,6 +501,90 @@ table td {
 .form_input4:focus,
 .form_inputI:focus {
   border: 1.5px solid #fff;
+}
+
+/* Multiple img */
+.form_img {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+  height: 180px;
+  width: 600px;
+  margin-bottom: 20px;
+  /* background-color: #727272; */
+}
+
+.form_img label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size: 12px;
+}
+
+.inpt {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box_img {
+  display: flex;
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+  background: none;
+  /* border: 2px dashed #c2cdda; */
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.box_img .image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.inpt .file-name {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 12px;
+  display: none;
+}
+
+.inpt.active:hover .file-name {
+  display: block;
+}
+
+.inpt #cancel-btn {
+  font-size: 20px;
+  cursor: pointer;
+  color: #dd0606;
+  text-align: right;
+  display: none;
+}
+
+.inpt.active:hover #cancel-btn {
+  display: block;
+}
+.inpt #cancel-btn:hover {
+  color: #e74c3c;
 }
 
 @media only screen and (max-width: 1280px) {

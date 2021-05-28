@@ -46,30 +46,40 @@ function gallery($sql_g)
   return $rows_g;
 }
 
-function tambah($data)
+function tambahProduk($data)
 {
   $conn = koneksi();
 
   $kodekt = htmlspecialchars($data['kode_kategori']);
-  $namakt = htmlspecialchars($data['nama_kategori']);
   $kodebr = htmlspecialchars($data['kode_barang']);
   $namabr = htmlspecialchars($data['nama_barang']);
   $ukr = htmlspecialchars($data['ukuran']);
   $stkbr = htmlspecialchars($data['stok_barang']);
   $hrg = htmlspecialchars($data['harga']);
   $dkpbr = htmlspecialchars($data['deskripsi_produk']);
-  $img = htmlspecialchars($data['gambar']);
   $gambar = htmlspecialchars($data['gambar_produk']);
 
   $db_p = "INSERT INTO produk
       VALUES
       ('$kodebr' , '$kodekt' , '$namabr' , '$ukr' , '$hrg' ,'$stkbr' , '$gambar' , '$dkpbr')";
 
+  mysqli_query($conn, $db_p);
+  return mysqli_affected_rows($conn);
+}
+
+function tambahKategori($data)
+{
+  $conn = koneksi();
+
+  $kodekt = htmlspecialchars($data['kode_kategori']);
+  $namakt = htmlspecialchars($data['nama_kategori']);
+  $img = htmlspecialchars($data['gambar']);
+
+
   $db_k = "INSERT INTO kategori
       VALUES
       ('$kodekt' , '$namakt' , '$img')";
 
-  mysqli_query($conn, $db_p);
   mysqli_query($conn, $db_k);
   return mysqli_affected_rows($conn);
 }
@@ -109,6 +119,13 @@ function ubah($data)
 
   mysqli_query($conn, $db_k);
   mysqli_query($conn, $db_p);
+  return mysqli_affected_rows($conn);
+}
+
+function hapusCategory($kode_kategori)
+{
+  $conn = koneksi();
+  mysqli_query($conn, "DELETE FROM kategori WHERE kode_kategori = $kode_kategori");
   return mysqli_affected_rows($conn);
 }
 

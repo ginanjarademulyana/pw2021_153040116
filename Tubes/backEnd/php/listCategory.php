@@ -31,6 +31,7 @@ $produk = produk("SELECT * FROM produk");
                     <table>
                         <thead>
                             <tr>
+                                <th> # </th>
                                 <th> Options </th>
                                 <th> Images </th>
                                 <th> SKU </th>
@@ -42,12 +43,13 @@ $produk = produk("SELECT * FROM produk");
                             <?php $i = 1; ?>
                             <?php foreach ($kategori as $kat) : ?>
                                 <tr>
+                                    <td> <?= $i; ?> </td>
                                     <td>
                                         <a href="changeCategory.php?kode_kategori=<?= $kat['kode_kategori']; ?>"><button type="submit" name="edit_btn" class="btn">Ubah</button></a>
-                                        <a href="hapus.php?kode_kategori=<?= $kat['kode_kategori']; ?>" onclick="return confirm ('Hapus Data Barang ?')"><button type="submit" name="delete_btn" class="btn">Hapus</button></a>
+                                        <a href="hapusCategory.php?kode_kategori=<?= $kat['kode_kategori']; ?>" onclick="return confirm ('Hapus Data Barang ?')"><button type="submit" name="delete_btn" class="btn">Hapus</button></a>
                                     </td>
-                                    <td><img src="../../frontEnd/assets/img/kategori/<?= $kat['gambar']; ?>" width="10%;"></td>
-                                    <td>RDSTR<?= $kat['kode_kategori']; ?></td>
+                                    <td><img src="../../frontEnd/assets/img/kategori/<?= $kat['gambar']; ?>" height="100vh;"></td>
+                                    <td>NSTR<?= $kat['kode_kategori']; ?></td>
                                     <td><?= $kat['nama_kategori']; ?></td>
                                 </tr>
                                 <?php $i++; ?>

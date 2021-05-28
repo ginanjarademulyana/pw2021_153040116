@@ -23,3 +23,64 @@ document.querySelector('#mobile-toggle').onclick = () => {
 document.querySelector('#sidebar-close').onclick = () => {
     sidebar.classList.toggle('active')
 }
+
+// const inpt = document.querySelector(".inpt");
+// const fileName = document.querySelector(".file-name");
+// const inputGambar = document.querySelector("#gambar_produk");
+// const inputPreview = document.querySelector("#input_preview");
+// const cancelBtn = document.querySelector("#cancel-btn");
+// const img = document.querySelector(".box_img img");
+// let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
+// function defaultBtnActive(){
+//     inputGambar.click();
+//   }
+
+// inputGambar.addEventListener("change", function(){
+//     const file = this.files[0];
+//     if(file){
+//         const reader = new FileReader();
+//         reader.onload = function(){
+//             const result = reader.result;
+//             img.src = result;
+//             inpt.classList.add("active");
+//         }
+
+//         cancelBtn.addEventListener("click", function(){
+//             img.src = " ";
+//             inpt.classList.remove("active");
+//         })
+        
+//         reader.readAsDataURL(file);
+//     }
+    
+//     if(this.value){
+//         let valueStore = this.value.match(regExp);
+//         fileName.textContent = valueStore;
+//     }
+
+   
+// });
+
+// inputPreview.addEventListener("change", function(){
+//     const file = this.files[0];
+//     if(file){
+//         const reader = new FileReader();
+//         reader.onload = function(){
+//             const result = reader.result;
+//             img.src = result;
+//             inpt.classList.add("active");
+//         }
+
+//         cancelBtn.addEventListener("click", function(){
+//             img.src = " ";
+//             inpt.classList.remove("active");
+//         })
+        
+//         reader.readAsDataURL(file);
+//     }
+//     if(this.value){
+//         let valueStore = this.value.match(regExp);
+//         fileName.textContent = valueStore;
+//     }
+// });

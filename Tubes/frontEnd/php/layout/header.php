@@ -17,6 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title> NSO Store </title>
+    <link rel="shortcut icon" href="../../assets/icons/iconNSO.png" type="image/png">
 
     <!-- --- My CSS --- -->
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -42,7 +43,7 @@
                         <li><a href="pp.php">Products</a></li>
                         <li><a href="">About</a></li>
                         <li><a href="">Contact</a></li>
-                        <li><a href="../account/myaccount.php">Account</a></li>
+                        <li><a href="../../account/myaccount.php">Account</a></li>
                     </ul>
                 </nav>
                 <a href="cart.php"><img src="../../assets/icons/cart.png" width="25px" height="30px"></a>

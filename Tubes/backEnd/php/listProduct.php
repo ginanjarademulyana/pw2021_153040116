@@ -52,8 +52,8 @@ $produk = produk("SELECT * FROM produk");
                                         <a href="changeProduct.php?kode_barang=<?= $prod['kode_barang']; ?>"><button type="submit" name="edit_btn" class="btn">Ubah</button></a>
                                         <a href="hapus.php?kode_barang=<?= $prod['kode_barang']; ?>" onclick="return confirm ('Hapus Data Barang ?')"><button type="submit" name="delete_btn" class="btn">Hapus</button></a>
                                     </td>
-                                    <td><img src="../../frontEnd/assets/img/products/<?= $prod['gambar_produk']; ?>" width="10%;"></td>
-                                    <td>RDSTR<?= $prod['kode_barang']; ?></td>
+                                    <td><img src="../../frontEnd/assets/img/products/<?= $prod['gambar_produk']; ?>" height="100vh;"></td>
+                                    <td>NSTR<?= $prod['kode_barang']; ?></td>
                                     <td><?= $prod['nama_barang']; ?></td>
                                     <td>Rp. <?= $prod['harga']; ?></td>
                                     <td><?= $prod['stok_barang']; ?></td>

@@ -13,16 +13,16 @@ if (!isset($_SESSION["username"])) {
 
 require 'functions.php';
 
-$kode_barang = $_GET['kode_barang'];
+$kode_kategori = $_GET['kode_kategori'];
 
-if (hapus($kode_barang) > 0) {
+if (hapusCategory($kode_kategori) > 0) {
   echo "<script>
           alert('Data Berhasil Diahpus!');
-          document.location.href = 'listProduct.php';
+          document.location.href = 'listCategory.php';
           </script>";
 } else {
   echo "<script>
           alert('Data Gagal Dihapus!');
-          document.location.href = 'listProduct.php';
+          document.location.href = 'listCategory.php';
           </script>";
 }

@@ -16,8 +16,10 @@ if (!isset($_SESSION["username"])) {
 require 'functions.php';
 require 'layout/sidebar.php';
 
+$kategori = produk("SELECT * FROM kategori");
+
 if (isset($_POST['tambah'])) {
-  if (tambah($_POST) > 0) {
+  if (tambahProduk($_POST) > 0) {
     echo "<script>
           alert('Data Berhasil Ditambahkan!');
           document.location.href = 'listProduct.php';
@@ -39,7 +41,7 @@ if (isset($_POST['tambah'])) {
         <div class="box-body overflow-scroll">
           <div class="container mt-2">
 
-            <form action="" class="form" method="POST">
+            <form action="" class="form" method="POST" enctype="multipart/form-data">
               <h1 class="form_title">Add Product</h1>
 
               <div class="form_div">
@@ -83,13 +85,77 @@ if (isset($_POST['tambah'])) {
 
               <div class="form_div">
                 <input type="text" class="form_input4" placeholder=" " name="deskripsi_produk" id="deskripsi_produk" required>
-                <label for="deskripsi_produk" class="label">Product Description</label>
+                <label for="deskripsi_produk" class="label">Deskripsi Produk</label>
               </div>
 
               <div class="form_div">
                 <input type="file" name="gambar_produk" id="gambar_produk" required>
               </div>
 
+
+              <!-- <div class="form_img">
+
+                <div class="inpt">
+                  <div id="cancel-btn"><i class='bx bx-x'></i></div>
+                  <label for="gambar_produk" class="box_img">
+                    <i class='bx bx-plus-medical'></i>
+                    <div class="image">
+                      <img src=" " alt="">
+                    </div>
+                    Product Image
+                  </label>
+                  <input type="file" id="gambar_produk" name="gambar_produk" id="gambar_produk" hidden required>
+                  <div class="file-name">
+                    File Name
+                  </div>
+                </div>
+
+                <div class="inpt">
+                  <div id="cancel-btn"><i class='bx bx-x'></i></div>
+                  <label for="input_preview" class="box_img">
+                    <i class='bx bx-plus-medical'></i>
+                    <div class="image">
+                      <img src=" " alt="">
+                    </div>
+                    Preview
+                  </label>
+                  <input type="file" id="input_preview" name="gambar_produk" id="gambar_produk" hidden>
+                  <div class="file-name">
+                    File Name
+                  </div>
+                </div>
+
+                <div class="inpt">
+                  <div id="cancel-btn"><i class='bx bx-x'></i></div>
+                  <label for="input_preview" class="box_img">
+                    <i class='bx bx-plus-medical'></i>
+                    <div class="image">
+                      <img src=" " alt="">
+                    </div>
+                    Preview
+                  </label>
+                  <input type="file" id="input_preview" name="gambar_produk" id="gambar_produk" hidden>
+                  <div class="file-name">
+                    File Name
+                  </div>
+                </div>
+
+                <div class="inpt">
+                  <div id="cancel-btn"><i class='bx bx-x'></i></div>
+                  <label for="input_preview" class="box_img">
+                    <i class='bx bx-plus-medical'></i>
+                    <div class="image">
+                      <img src=" " alt="">
+                    </div>
+                    Preview
+                  </label>
+                  <input type="file" id="input_preview" name="gambar_produk" id="gambar_produk" hidden>
+                  <div class="file-name">
+                    File Name
+                  </div>
+                </div>
+
+              </div> -->
 
               <button class="btn" type="submit" name="tambah">Add Product</button>
             </form>

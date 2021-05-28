@@ -77,7 +77,7 @@ if (isset($_POST['ubah'])) {
               </div>
 
               <div class="form_div">
-                <input type="file" class="form_inputI" placeholder=" " name="gambar_produk" id="gambar_produk" required style="margin-bottom: 40px;">
+                <input type="file" class="form_inputI" placeholder=" " name="gambar_produk" id="gambar_produk" style="margin-bottom: 40px;">
                 <label for="gambar_produk" class="label">Image Product : <?= $produk['gambar_produk']; ?></label>
               </div>
 

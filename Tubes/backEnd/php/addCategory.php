@@ -17,7 +17,7 @@ require 'functions.php';
 require 'layout/sidebar.php';
 
 if (isset($_POST['tambah'])) {
-    if (tambah($_POST) > 0) {
+    if (tambahKategori($_POST) > 0) {
         echo "<script>
           alert('Data Berhasil Ditambahkan!');
           document.location.href = 'listCategory.php';

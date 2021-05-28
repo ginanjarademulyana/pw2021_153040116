@@ -17,9 +17,14 @@ require 'layout/header.php';
 
 $kode_barang = $_GET["kode_barang"];
 $kode_kategori = $_GET["kategori"];
-$prdk = produk("SELECT * FROM produk WHERE kode_barang = $kode_barang")[0];
-$gal = gallery("SELECT * FROM gallery WHERE kode_barang = $kode_barang");
-$kat = kategori("SELECT * FROM kategori WHERE kode_kategori = $kode_kategori")[0];
+
+$kat = "SELECT nama_barang, ukuran, harga, stok_barang, gambar_produk, deskripsi_produk, nama_kategori
+FROM produk JOIN kategori
+ON produk.kode_kategori = kategori.kode_kategori
+WHERE produk.kode_barang = $kode_barang";
+
+
+$prdk = produk($kat)[0];
 
 ?>
 
@@ -34,7 +39,7 @@ $kat = kategori("SELECT * FROM kategori WHERE kode_kategori = $kode_kategori")[0
         </div>
       </div>
 
-      <!-- Gallery -->
+      <!-- Gallery
       <div class="img-select">
         <div class="img-item">
           <a href="#" data-id="1">
@@ -56,7 +61,7 @@ $kat = kategori("SELECT * FROM kategori WHERE kode_kategori = $kode_kategori")[0
             <img src="shoes_images/shoe_4.jpg" alt="shoe image">
           </a>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <!-- Deskripsi -->
@@ -81,7 +86,7 @@ $kat = kategori("SELECT * FROM kategori WHERE kode_kategori = $kode_kategori")[0
         <ul>
           <li>Color: <span>Black</span></li>
           <li>Available: <span><?= $prdk["stok_barang"]; ?></span></li>
-          <li>Category: <span><?= $kat["nama_kategori"]; ?></span></li>
+          <li>Category: <span><?= $prdk["nama_kategori"]; ?></span></li>
           <li>Shipping Area: <span>All over the world</span></li>
           <li>Shipping Fee: <span>Free</span></li>
         </ul>

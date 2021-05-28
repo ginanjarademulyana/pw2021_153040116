@@ -20,13 +20,14 @@ if (isset($_SESSION['username'])) {
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $user = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
+    $cek_user = mysqli_query(koneksi(), "SELECT * FROM user WHERE username = '$username'");
 
-    if (mysqli_num_rows($user) > 0) {
-        $row = mysqli_fetch_assoc($user);
+    if (mysqli_num_rows($cek_user) > 0) {
+        $row = mysqli_fetch_assoc($cek_user);
         if (password_verify($password, $row['password'])) {
             $_SESSION['username'] = $_POST['username'];
             $_SESSION['hash'] = hash('sha256', $row['id'], false);
+
 
             if (isset($_POST['remember'])) {
                 setcookie('username', $row['username'], time() + 60 * 60 * 24);
