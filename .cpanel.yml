@@ -1,5 +1,5 @@
 ---
 deployment:
 task:
-  - export DEPLOYPATH=/home3/pw15116/repositories/pw2021_153040116
+  - export DEPLOYPATH=/home3/pw15116/public_html/
   - /bin/cp -R * $DEPLOYPATH
