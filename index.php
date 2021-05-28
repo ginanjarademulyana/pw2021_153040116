@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- --- My CSS --- -->
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="Tubes/assets/css/style.css" />
 
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 
@@ -32,16 +32,16 @@
 
         <div class="pages">
             <a href="index.php">
-                <img src="assets/icon/home.png" alt="">
+                <img src="Tubes/assets/icons/home.png" alt="">
             </a>
             <a href="about.php">
-                <img src="assets/icon/user.png" alt="">
+                <img src="Tubes/assets/icons/user.png" alt="">
             </a>
             <a href="contact.php">
-                <img src="assets/icon/contact.png" alt="">
+                <img src="Tubes/assets/icons/contact.png" alt="">
             </a>
             <a href="courses.php">
-                <img src="assets/icon/layers.png" alt="">
+                <img src="Tubes/assets/icons/layers.png" alt="">
             </a>
         </div>
     </div>
@@ -66,7 +66,7 @@
             </div>
 
             <!-- Tombol -->
-            <a href="frontEnd/index.php">
+            <a href="Tubes/frontEnd/index.php">
                 <button class="content-btn">
                     Tugas Besar
                 </button>
@@ -75,14 +75,14 @@
             <!-- Link Tugas -->
             <div class="tugas">
                 <div class="matkul">
-                    <a href="../Kuliah/" target="_blank">
+                    <a href="Kuliah/" target="_blank">
                         <h1>Matakuliah</h1>
                         <p>Kumpulan tugas-tugas Matakuliah Pemrograman Web</p>
                     </a>
                 </div>
 
                 <div class="praktikum">
-                    <a href="../Praktikum" target="_blank">
+                    <a href="Praktikum" target="_blank">
                         <h1>Praktikum</h1>
                         <p>Kumpulan tugas-tugas Praktikum Pemrograman Web</p>
                     </a>
@@ -94,30 +94,30 @@
         <!-- Logo -->
         <div class="dorion">
             <div class="logo">
-                <img src="assets/icon/logo.png" alt="">
+                <img src="Tubes/assets/icons/logo.png" alt="">
             </div>
         </div>
 
         <!-- Sosial -->
         <div class="sosial">
             <i class="i_gsap">
-                <a href="https://www.facebook.com/dorion.official" target="_blank"><img src="assets/icon/facebook.png"></a>
+                <a href="https://www.facebook.com/dorion.official" target="_blank"><img src="Tubes/assets/icons/facebook.png" style="background-color: black;"></a>
                 <span>Facebook</span>
             </i>
             <i class="i_gsap">
-                <a href="https://www.instagram.com/dorionsix/" target="_blank"><img src="assets/icon/instagram.png"></a>
+                <a href="https://www.instagram.com/dorionsix/" target="_blank"><img src="Tubes/assets/icons/instagram.png"></a>
                 <span>Instagram</span>
             </i>
             <i class="i_gsap">
-                <a href="https://twitter.com/urangnuisukan" target="_blank"><img src="assets/icon/twitter.png"></a>
+                <a href="https://twitter.com/urangnuisukan" target="_blank"><img src="Tubes/assets/icons/twitter.png" style="background-color: black;"></a>
                 <span>Twitter</span>
             </i>
             <i class="i_gsap">
-                <a href="https://www.youtube.com/channel/UCT1aoktP67LdnBRS_OibiTw" target="_blank"><img src="assets/icon/youtube.png"></a>
+                <a href="https://www.youtube.com/channel/UCT1aoktP67LdnBRS_OibiTw" target="_blank"><img src="Tubes/assets/icons/youtube.png"></a>
                 <span>Youtube</span>
             </i>
             <i class="i_gsap">
-                <a href="https://www.twitch.tv/dorionsix" target="_blank"><img src="assets/icon/twitch.png"></a>
+                <a href="https://www.twitch.tv/dorionsix" target="_blank"><img src="Tubes/assets/icons/twitch.png"></a>
                 <span>Twitch</span>
             </i>
         </div>
@@ -128,7 +128,7 @@
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous"></script>
 
-    <script src="assets/js/app.js"></script>
+    <script src="Tubes/assets/js/app.js"></script>
 </body>
 
 </html>
